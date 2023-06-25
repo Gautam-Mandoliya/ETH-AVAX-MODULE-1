@@ -1,22 +1,19 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.18;
 
-contract error_handling {
-    uint256 public value;
+contract ErrorHandling {
+    uint256 public value=10;
 
     function setValue(uint256 _newValue) external {
-        // Using require statement to validate a condition
-        require(_newValue > 0, "New value must be greater than zero");
-
-        // Using assert statement to validate an assertion
+        //check require function here
+        require(_newValue > value, "New value must be greater than zero");
+        //check assert function here
+        
         assert(_newValue != value);
-
-        // Updating the value
         value = _newValue;
-
-        // Using revert statement to revert the transaction
-        if (_newValue == 42) {
-            revert("Cannot set the value to 42");
+        //check revert function here
+        if (_newValue == 50) {
+            revert("Cannot set the value to 50");
         }
     }
 }
