@@ -34,11 +34,12 @@ Once the contract is attached, you can go ahead and call the smart contract func
 Here is an example you can run using our hardhat provided accounts:
 
 1. Call requireExample function and listen for ValueDivided event
+
      --> await err.requireExample(100,2) //require is not called
    
      --> await err.requireExample(100,0) //require is called
 
-3. Call revertExample function and listen for EtherTransferred event
+2. Call revertExample function and listen for EtherTransferred event
      --> const beneficiary = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
    
      --> const value = ethers.utils.parseEther("5"); // Convert 5 Ether to Wei
@@ -46,7 +47,7 @@ Here is an example you can run using our hardhat provided accounts:
      --> await err.revertExample(beneficiary, { value: value })
 
 
-5. Call assertExample function and listen for NumbersAdded event
+3. Call assertExample function and listen for NumbersAdded event
   
      --> await err.assertExample([4,6,10]) //assert is not called
    
