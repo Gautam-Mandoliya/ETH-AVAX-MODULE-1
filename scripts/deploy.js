@@ -7,7 +7,7 @@
 const hre = require("hardhat");
 
 async function main() { 
-  const EventTest = await hre.ethers.getContractFactory("Bank");
+  const EventTest = await hre.ethers.getContractFactory("error");
   const eventTest = await EventTest.deploy();
 
   await eventTest.deployed();
